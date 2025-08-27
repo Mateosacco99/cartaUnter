@@ -1,19 +1,50 @@
-<html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Untertürkheim</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="banner">
+    <h1>Untertürkheim</h1>
+  </div>
 
-    <head>
-    
-    <link rel="stylesheet" href="style.css">
+  <!-- barra de NAVEGACION -->
+  <nav class="subnav" aria-label="Secciones">
+    <div class="tabs">
+      <a href="#cervezas" class="tab">Cervezas</a>
+      <a href="#cocina" class="tab">Cocina</a>
+      <a href="#promos" class="tab">Promos</a>
+      <a href="#reservas" class="tab">Reservas</a>
+      <a href="#ubicacion" class="tab">Ubicación</a>
+    </div>
+  </nav>
 
+  <!-- Sección Cervezas con carta -->
+  <section id="cervezas" class="section">
+    <div class="wrap">
+      <h2>Cervezas</h2>
+      <h3>Tiradas</h3>
+      <ul class="list">
+        <li><strong>Kölsch</strong> — Clara, equilibrada <span style="float:right">$1.800</span></li>
+        <li><strong>Weissbier</strong> — Trigo refrescante <span style="float:right">$2.000</span></li>
+        <li><strong>Dunkel</strong> — Oscura, notas caramelo <span style="float:right">$2.100</span></li>
+      </ul>
+      <h3>Importadas</h3>
+      <ul class="list">
+        <li><strong>Erdinger</strong> — Botella 500 ml <span style="float:right">$3.200</span></li>
+        <li><strong>Paulaner</strong> — Botella 500 ml <span style="float:right">$3.400</span></li>
+      </ul>
+    </div>
+  </section>
 
-    </head>
+  <!-- PLACEHOLDER -->
+  <section id="cocina" class="section"><div class="wrap"><h2>Cocina</h2><p>Próximamente…</p></div></section>
+  <section id="promos" class="section"><div class="wrap"><h2>Promos</h2><p>Próximamente…</p></div></section>
+  <section id="reservas" class="section"><div class="wrap"><h2>Reservas</h2><p>Próximamente…</p></div></section>
+  <section id="ubicacion" class="section"><div class="wrap"><h2>Ubicación</h2><p>Próximamente…</p></div></section>
 
-
-    <body>
-        <div id="banner">
-            <h1>Untertürkheim</h1>
-        </div>
-        
-
-    </body>
-
+<script src="scripts.js"></script>
+</body>
 </html>
