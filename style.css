@@ -33,10 +33,14 @@
       color:#000000; text-decoration:none; font-weight:600;
       opacity:.85; border:1px solid transparent;
     }
-    .tabs a:hover{opacity:1; background:#C88A0A}
+    .tabs a:hover{
+        opacity:1; background:#C88A0A;
+          font-weight:700;
+        color:#6E1A1A;
+    }
     .tabs a.is-active{
       border-color: rgba(255,255,255,.3);
-        opacity:1; background:#C88A0A;
+        opacity:1; background:#F2E6C9;
       box-shadow: inset 0 -2px 0 0 #C88A0A;
     }
     .section{padding:56px 16px; scroll-margin-top: 120px}
@@ -45,3 +49,58 @@
     .list{list-style:none;padding:0;margin:0}
     .list li{padding:6px 0;border-bottom:1px solid rgba(0,0,0,.15)}
     .list li:last-child{border-bottom:none}
+
+    :root{
+    --side-band-w: min(22vw, 260px);
+    --side-img: url("src/img/unterfoto.png");
+    --side-opacity: 0.35;                
+    }
+
+    body::before,
+    body::after{
+    content:"";
+    position: fixed;
+    top: 0; bottom: 0;
+    width: var(--side-band-w);
+    background: var(--side-img) center/cover no-repeat;
+    opacity: var(--side-opacity);
+    pointer-events: none;
+    z-index: 0;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 25%,
+        transparent 25%,
+        transparent 75%,
+        black 75%,
+        black 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 25%,
+        transparent 25%,
+        transparent 75%,
+        black 75%,
+        black 100%
+    );
+    }
+
+    body::before{
+    left: 0;
+    }
+
+    body::after{
+    right: 0;
+    transform: scaleX(-1);
+    }
+
+    #banner, .subnav, .section, .wrap{
+    position: relative;
+    z-index: 1;
+    }
+
+    @media (max-width: 900px){
+    body::before, body::after{ display:none; }
+    }
