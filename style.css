@@ -1,0 +1,28 @@
+body {
+ 
+ background-color: #f1d781;
+}
+
+@font-face {
+ 
+ font-family: "UnifrakturCook";
+ 
+ src: url("src/fonts/UnifrakturCook-Bold.ttf") format("truetype");
+
+ font-weight: bold;
+
+ font-style: normal;
+
+ font-display: swap;
+}
+
+#banner {
+ 
+ background-color: #004225;
+ 
+ border-bottom: 2px solid #000000;
+
+ font: "UnifrakturCook";
+
+ text-align: center;
+}
