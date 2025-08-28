@@ -10,6 +10,8 @@
       font-style: normal;
       font-display: swap;
     }
+
+    /* --- header --- */
     #banner {
       background-color: #004225;
       border-bottom: 2px solid #000000;
@@ -20,13 +22,15 @@
       font-family: "UnifrakturCook", serif;
     }
 
+
+    /* --- logo pie de pagina --- */
     .footer{
         display:flex; justify-content:center; align-items:center;
         padding:20px 0; border-top:1px solid rgba(0,0,0,.15);
         background:#F2E6C9;
     }
     
-    .footer img{ width:50px; height:50px; display:block; }
+    .footer img{ width:75px; height:75px; display:block; }
 
     /* --- Barra de NAV --- */
     .subnav {
@@ -61,6 +65,9 @@
     .list li{padding:6px 0;border-bottom:1px solid rgba(0,0,0,.15)}
     .list li:last-child{border-bottom:none}
 
+
+
+    /* --- estilo imagen fondo laterales --- */
     :root{
     --side-band-w: min(22vw, 260px);
     --side-img: url("src/img/unterfoto.png");
