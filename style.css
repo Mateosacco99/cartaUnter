@@ -77,6 +77,8 @@
     .list li{padding:6px 0;border-bottom:1px solid rgba(0,0,0,.15)}
 
     .list li:last-child{border-bottom:none}
+    .precio { float: right; font-weight: 700; }
+    .list li { overflow: hidden; }
 
     /* --- estilo imagen fondo laterales --- */
     :root{
