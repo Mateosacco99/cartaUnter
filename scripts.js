@@ -8,7 +8,6 @@ document.querySelectorAll('.subnav .tab').forEach(a=>{
   });
 });
 const tabs=[...document.querySelectorAll('.subnav .tab')];
-const map=new Map(tabs.map(a=>[a.getAttribute('href'),a]));
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
     if(entry.isIntersecting){

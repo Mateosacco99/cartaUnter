@@ -84,7 +84,7 @@
     transform: scaleX(-1);
     }
 
-    #banner, .subnav, .section, .wrap{
+    #banner, .section, .wrap{
     position: relative;
     z-index: 1;
     }
