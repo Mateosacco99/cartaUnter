@@ -15,15 +15,32 @@
     }
 
     /* --- header --- */
-    #banner {
-      background-color: #004225;
-      border-bottom: 2px solid #000000;
-      text-align: center;
-      color: #fff;
-      font-size: 26px;
-      padding: 16px 0;
-      font-family: "UnifrakturCook", serif;
-    }
+   #banner {
+  position: relative;
+  text-align: center;
+  color: #fffede;
+  font-size: 26px;
+  padding: 40px 0; /* un poco más alto para lucir la imagen */
+  font-family: "UnifrakturCook", serif;
+
+  /* Imagen de fondo */
+  background: url("src/img/deco2.jpg") center/cover no-repeat;
+  border-bottom: 2px solid #000000;
+}
+
+/* Capa verde semitransparente encima */
+#banner::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* ocupa todo el banner */
+  background-color: rgba(0, 66, 37, 0.7); /* verde con transparencia */
+  z-index: 0;
+}
+
+#banner h1 {
+  position: relative; /* asegura que el texto quede arriba de la capa */
+  z-index: 1;
+}
 
     /* --- logo pie de pagina --- */
     .footer{
@@ -132,11 +149,11 @@
 }
 
 .card{
-  background: #fff;
+  background: #ce8e0d;
   border: 1px solid rgba(0,0,0,.12);
   border-radius: 10px;        /* antes 12px */
   overflow: hidden;
-  box-shadow: none;          /* sacamos sombra si querés cero aire */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);          /* sacamos sombra si querés cero aire */
   margin: 0;                 /* aseguramos sin márgenes extra */
 }
 
