@@ -181,7 +181,7 @@
 
   figure { margin: 0; }  
 
-  .menu-grid .card img:hover {  /* --- zoom efecto --- */
+  .menu-grid .card img:hover {  
   transform: scale(1.08); 
   box-shadow: 0 8px 22px rgba(0,0,0,0.35);
 }
