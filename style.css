@@ -385,3 +385,9 @@
     color: #333333;   
     font-weight: 700;
   }
+footer.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
+}
