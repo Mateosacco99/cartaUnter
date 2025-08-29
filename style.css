@@ -72,7 +72,7 @@
     }
 
     .tabs a:hover{
-        opacity:1; background:#C88A0A;
+        opacity:1; background:#dfb769;
           font-weight:700;
         color:#6E1A1A;
     }
@@ -185,4 +185,181 @@ figure { margin: 0; }  /* saca margen por defecto de <figure> */
 }
 @media (max-width: 560px){
   .menu-grid{ grid-template-columns: 1fr; }
+}
+
+/* --- Formulario --- */
+.form { margin-top: 12px; }
+.form-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:12px;
+}
+.form label{ display:flex; flex-direction:column; gap:6px; font-weight:600; }
+.form input, .form select, .form textarea{
+  padding:10px 12px; border:1px solid rgba(0,0,0,.2);
+  border-radius:8px; font:inherit; background:#fff;
+}
+.form input:invalid, .form textarea:invalid{ border-color:#b94a48; }
+.form input:valid{ border-color:#3a8f3a; }
+
+.form-fieldset{
+  border:1px solid rgba(0,0,0,.2);
+  border-radius:10px; padding:10px 12px; margin:12px 0;
+  display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+}
+.form-fieldset legend{ padding:0 6px; font-weight:700; }
+
+.form-full{ grid-column:1 / -1; display:flex; flex-direction:column; gap:6px; }
+
+.form-actions{ display:flex; gap:10px; margin-top:8px; }
+.btn{
+  padding:10px 14px; border-radius:10px; border:1px solid #C88A0A;
+  background:#C88A0A; color:#6E1A1A; font-weight:700; cursor:pointer;
+}
+.btn:hover{ filter:brightness(1.05); }
+.btn-ghost{ background:transparent; color:#6E1A1A; }
+
+.form-legal{ font-size:.9rem; opacity:.7; margin-top:8px; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .form-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .form-grid{ grid-template-columns: 1fr; }
+}
+.form-note{
+  background: rgba(200,138,10,0.1);
+  border: 1px solid rgba(200,138,10,0.35);
+  border-radius: 10px;
+
+  /* aire interior */
+  padding: 24px 18px;      /* antes 10px 12px */
+
+  /* aire exterior */
+  margin: 32px 0 40px;     /* antes 6px 0 12px */
+}
+
+/* hace este bloque + ancho solo en cervezas */
+.wrap--wide { max-width: 1200px; }   /* antes 1000px */
+
+/* === Tabla de Cervezas · estilo TARJETA === */
+.table-wrap{
+  margin-top: 12px;
+  background: #F2E6C9;                 /* mismo tono de la carta */
+  border: none;                         /* sin marco duro */
+  box-shadow: inset 0 1px 0 rgba(0,0,0,.05);
+  border-radius: 12px;
+}
+
+.table-scroll{ overflow: visible; }     /* sin scroll horizontal */
+
+/* filas separadas como tarjetas */
+.beer-table{
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;            /* clave para el “card look” */
+  border-spacing: 0 10px;               /* espacio vertical entre filas */
+  font-size: 15px;
+}
+
+.beer-table thead th{
+  position: sticky; top: 0; z-index: 2;
+  background: #E9DDBE;                  /* cabecera beige (sin blanco) */
+  padding: 12px 14px;
+  text-align: right;
+  font-weight: 1200;
+  border: none;
+}
+.beer-table th:first-child,
+.beer-table td:first-child {
+  text-align: left;         /* Variedades a la izquierda */
+}
+
+.beer-table th:not(:first-child),
+.beer-table td:not(:first-child) {
+  text-align: right;        /* Todas las demás columnas a la derecha */
+}
+
+/* celdas como bloque unificado (tarjeta) */
+.beer-table tbody td{
+  padding: 16px 14px;                   /* más alto y aireado */
+  background: #e9dbb7;                  /* crema suave para la “tarjeta” */
+  border: none;                         /* sin líneas internas */
+  vertical-align: middle;
+  line-height: 1.4;
+  
+}
+
+/* redondeo y sombra SOLO en extremos, para simular una tarjeta continua */
+.beer-table tbody td:first-child{
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+.beer-table tbody td:last-child{
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+/* columna de descripción con jerarquía */
+.beer-table td:first-child{
+  white-space: normal;                  /* permite varias líneas */
+  color: #2a2a2a;
+  font-weight: 600;
+}
+.beer-table .nota{
+  display:block; margin-top:4px;
+  font-size: .95rem; opacity:.8;
+}
+
+/* precios alineados prolijos */
+.beer-table .num{
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+/* hover cálido */
+.beer-table tbody tr:hover td{
+  background: rgba(200,138,10,0.12);
+  transition: background .25s ease;
+}
+/* Fondo cálido */
+.beer-table tbody tr:hover {
+  background: rgba(200,138,10,0.12);
+}
+
+/* Texto bordo solo mientras el mouse está arriba */
+.beer-table tbody tr:hover td,
+.beer-table tbody tr:hover td strong {
+  color: #6E1A1A;
+}
+.beer-table .num{
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  font-weight: 700;
+  color: #161515;   /* 👈 color fijo para los precios */
+}
+
+/* encabezado "Variedades" */
+.beer-table th:first-child {
+  color: #2c2c2c;   /* verde institucional de tu banner */
+}
+
+/* contenido de variedades + notas */
+.beer-table td:first-child {
+  color: #202020;      /* gris oscuro legible */
+}
+
+.beer-table td:first-child strong {
+  color: #004225;   /* nombre de la cerveza en verde */
+}
+
+.beer-table th:not(:first-child) {
+  color: #333333;   /* bordó, igual al menú */
+  font-weight: 700;
 }

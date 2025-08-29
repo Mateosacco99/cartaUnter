@@ -21,23 +21,123 @@
     </div>
   </nav>
 
-  <!-- Cervezas -->
   <section id="cervezas" class="section">
-    <div class="wrap">
-      <h2>Cervezas</h2>
-      <h3>Tiradas</h3>
-      <ul class="list">
-        <li><strong>Kölsch</strong> — Clara, equilibrada <span class="precio">$1.800</span></li>
-        <li><strong>Weissbier</strong> — Trigo refrescante <span class="precio">$2.000</span></li>
-        <li><strong>Dunkel</strong> — Oscura, notas caramelo <span class="precio">$2.100</span></li>
-      </ul>
-      <h3>Importadas</h3>
-      <ul class="list">
-        <li><strong>Erdinger</strong> — Botella 500 ml <span class="precio">$3.200</span></li>
-        <li><strong>Paulaner</strong> — Botella 500 ml <span class="precio">$3.400</span></li>
-      </ul>
+  <div class="wrap wrap--wide">
+    <h2>Cervezas</h2>
+
+    <!-- Cintillo tipo happy-hour -->
+    <p style="margin:8px 0 12px">
+      
+    </p>
+
+    <!-- Tabla sin scroll horizontal -->
+    <div class="table-wrap">
+      <div class="table-scroll">
+        <table class="beer-table" aria-label="Cervezas Tiradas">
+          <colgroup>
+            <col style="width:44%">  <!-- Variedades -->
+            <col style="width:11%">  <!-- Chopp 330 -->
+            <col style="width:11%">  <!-- Pinta 500 -->
+            <col style="width:11%">  <!-- Chopp 1L -->
+            <col style="width:11%">  <!-- Jarra 1.5L -->
+            <col style="width:12%">  <!-- Bota 2L -->
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Variedades</th>
+              <th>Chopp 330cc</th>
+              <th>Pinta 500cc</th>
+              <th>Chopp 1 L</th>
+              <th>Jarra 1,5 L</th>
+              <th>Bota 2 L</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Lager</strong> <span class="nota">(Warsteiner)</span>
+                <span class="nota">Fina, dorada, espuma delicada.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Kölsch</strong> <span class="nota">(Antares)</span>
+                <span class="nota">Dorada, fresca, destellos florales.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Maibock</strong> <span class="nota">(Caldeus)</span>
+                <span class="nota">Alemana, maltosa, final seco.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Irish Red</strong> <span class="nota">(Kraken)</span>
+                <span class="nota">Suave, acaramelada, cremosa.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>American Amber Ale</strong> <span class="nota">(Gorilla)</span>
+                <span class="nota">Balance entre amargor y maltosidad.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Robust Porter</strong> <span class="nota">(Kraken)</span>
+                <span class="nota">Tostado, notas a chocolate.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Honey</strong> <span class="nota">(Kraken)</span>
+                <span class="nota">Sutil, notas de miel, final seco.</span>
+              </td>
+              <td class="num">$4.200</td><td class="num">$6.000</td><td class="num">$10.000</td><td class="num">$15.000</td><td class="num">$20.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Hazy Pale Ale</strong> <span class="nota">(Gorilla)</span>
+                <span class="nota">Turbiada, jugosa, frutada.</span>
+              </td>
+              <td class="num">$4.800</td><td class="num">$7.500</td><td class="num">$12.000</td><td class="num">$18.000</td><td class="num">$24.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>American IPA</strong> <span class="nota">(Kraken)</span>
+                <span class="nota">Lupulada, cítrica y resinosa.</span>
+              </td>
+              <td class="num">$4.500</td><td class="num">$7.000</td><td class="num">$12.000</td><td class="num">$18.000</td><td class="num">$24.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Schöfferhofer</strong> <span class="nota">(Trigo Alemana)</span>
+              </td>
+              <td class="num">$6.500</td><td class="num">$8.500</td><td class="num">$12.600</td><td class="num">$26.000</td><td class="num">$32.000</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Cerveza Rotativa</strong>
+                <span class="nota">Consultá estilos disponibles hoy.</span>
+              </td>
+              <td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </section>
+
+    
+  </div>
+</section>
+
 
   <!-- TODO: Rellenar secciones -->
   <section id="cocina" class="section">

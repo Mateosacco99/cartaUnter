@@ -10,12 +10,90 @@
     <h1>Untertürkheim</h1>
   </div>
 
-  <!-- barra de NAVEGACION -->
   <nav class="subnav" aria-label="Secciones">
     <div class="tabs">
-      <a href="index.html" class="tab">Volver al menu</a>
+      <a href="index.html" class="tab">Volver al menú</a>
     </div>
   </nav>
 
-  </body>
+  <section class="section">
+    <div class="wrap">
+      <h2>Reservas</h2>
+
+        <div class="form-note">
+      <p>
+        🔔 <strong>Importante:</strong> Las reservas se realizan únicamente para 
+        <strong>viernes y sábados</strong>.  
+        La capacidad máxima es de <strong>10 personas por reserva</strong>.  
+        Para el resto de los días la atención es <em>sin reserva</em>.
+      </p>
+      <p>Es obligatorio dejar un teléfono de contacto para confirmar la reserva.
+        
+      </p>
+    </div>
+
+      <form id="reservaForm" class="form" action="#" method="post" novalidate>
+        <div class="form-grid">
+          <label>
+            Nombre y apellido
+            <input type="text" name="nombre" placeholder="Nombre completo" maxlength="50" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" placeholder="nombre@dominio.com" required>
+          </label>
+
+          <label>
+            Teléfono 
+            <input type="tel" name="tel" placeholder="11 5555 5555" pattern="[0-9\s+()-]{6,}">
+          </label>
+
+          <label>
+            Fecha
+            <input type="date" name="fecha" required>
+          </label>
+
+          <label>
+            Hora
+            <input type="time" name="hora" required>
+          </label>
+
+          <label>
+            Personas
+            <input type="number" name="personas" min="1" max="12" value="2" required>
+          </label>
+        </div>
+
+        <fieldset class="form-fieldset">
+          <legend>Ubicación</legend>
+          <label><input type="radio" name="ubicacion" value="interior" checked> Interior</label>
+          <label><input type="radio" name="ubicacion" value="exterior"> Exterior</label>
+          <label><input type="radio" name="ubicacion" value="barra"> Barra</label>
+        </fieldset>
+
+        <fieldset class="form-fieldset">
+          <legend>Preferencias (opcional)</legend>
+          <label><input type="checkbox" name="bebe" value="si"> Silla para bebé</label>
+          <label><input type="checkbox" name="cumple" value="si"> Cumpleaños</label>
+          <label><input type="checkbox" name="vegetariano" value="si"> Menú vegetariano</label>
+        </fieldset>
+
+        <label class="form-full">
+          Comentarios (opcional)
+          <textarea name="coment" rows="3" maxlength="200" placeholder="Alergias, pedidos especiales…"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Reservar</button>
+          <!-- <button type="reset" class="btn btn-ghost">Limpiar</button> -->
+        </div>
+
+        <p class="form-legal">Enviaremos confirmación por email. No compartimos tus datos.</p>
+      </form>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
+</body>
 </html>
