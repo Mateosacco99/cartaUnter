@@ -18,11 +18,10 @@ const observer=new IntersectionObserver(entries=>{
 },{rootMargin:'-40% 0px -55% 0px',threshold:0.01});
 document.querySelectorAll('section.section[id]').forEach(sec=>observer.observe(sec));
 
-// Confirmación básica (demo sin backend)
 const f = document.getElementById('reservaForm');
 if (f){
   f.addEventListener('submit', (e)=>{
-    if(!f.checkValidity()){ return; } // que valide HTML5 primero
+    if(!f.checkValidity()){ return; }
     e.preventDefault();
     const nombre = f.nombre.value.trim();
     const fecha  = f.fecha.value;
