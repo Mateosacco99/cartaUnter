@@ -32,11 +32,11 @@
       </p>
     </div>
 
-      <form id="reservaForm" class="form" action="#" method="post" novalidate>
+      <form id="reservaForm" class="form" action="#" method="post">
         <div class="form-grid">
           <label>
             Nombre y apellido
-            <input type="text" name="nombre" placeholder="Nombre completo" maxlength="50" required>
+            <input type="text" name="nombre" placeholder="Nombre completo" minlength="3" maxlength="50" required>
           </label>
 
           <label>
@@ -86,11 +86,11 @@
 
         <div class="form-actions">
           <button type="submit" class="btn">Reservar</button>
-          
         </div>
 
         <p class="form-legal">Enviaremos confirmación por email. No compartimos tus datos.</p>
       </form>
+      <script src="scripts.js"></script>
     </div>
   </section>
 

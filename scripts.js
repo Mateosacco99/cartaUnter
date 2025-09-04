@@ -1,3 +1,6 @@
+
+// Scroll hasta seccion seleccionada en subnav.
+
 document.querySelectorAll('.subnav .tab').forEach(a=>{
   a.addEventListener('click', e=>{
     const href = a.getAttribute('href');
@@ -18,17 +21,43 @@ const observer=new IntersectionObserver(entries=>{
 },{rootMargin:'-40% 0px -55% 0px',threshold:0.01});
 document.querySelectorAll('section.section[id]').forEach(sec=>observer.observe(sec));
 
-// Confirmación básica (demo sin backend)
-const f = document.getElementById('reservaForm');
-if (f){
-  f.addEventListener('submit', (e)=>{
-    if(!f.checkValidity()){ return; } // que valide HTML5 primero
+
+// Validacion y manejo de formulario de reservas.
+
+document.addEventListener('DOMContentLoaded', () => {
+  const f = document.getElementById('reservaForm');
+  const dateInput = f.elements.fecha;
+  const timeInput = f.elements.hora;
+
+  const t = new Date();
+  dateInput.min = `${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,'0')}-${String(t.getDate()).padStart(2,'0')}`;
+  timeInput.min = '16:00';
+  timeInput.max = '23:00';
+
+  const validarFecha = () => {
+    dateInput.valorCustom('');
+    if (!dateInput.value) dateInput.valorCustom('Seleccione una fecha.');
+    else if (dateInput.validity.rangeUnderflow)
+      dateInput.valorCustom('La fecha no puede ser anterior a hoy.');
+  };
+  const validarHora = () => {
+    timeInput.valorCustom('');
+    if (!timeInput.value) timeInput.valorCustom('Seleccione una hora.');
+    else if (timeInput.validity.rangeUnderflow || timeInput.validity.rangeOverflow)
+      timeInput.valorCustom('Las reservas deben ser entre 16:00 y 23:00.');
+  };
+
+  dateInput.addEventListener('input', validarFecha);
+  dateInput.addEventListener('invalid', validarFecha);
+  timeInput.addEventListener('input', validarHora);
+  timeInput.addEventListener('invalid', validarHora);
+
+  f.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nombre = f.nombre.value.trim();
-    const fecha  = f.fecha.value;
-    const hora   = f.hora.value;
-    const pers   = f.personas.value;
-    alert(`¡Gracias ${nombre}! Recibimos tu reserva para ${pers} el ${fecha} a las ${hora}.`);
+    validarFecha(); validarHora();
+    if (!f.reportValidity()) return;
+    const { nombre, fecha, hora, personas } = f.elements;
+    alert(`¡Gracias ${nombre.value.trim()}! Recibimos tu reserva para ${personas.value} el ${fecha.value} a las ${hora.value}.`);
     f.reset();
   });
-}
+});
