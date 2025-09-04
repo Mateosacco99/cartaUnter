@@ -35,16 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
   timeInput.max = '23:00';
 
   const validarFecha = () => {
-    dateInput.setCustomValidity('');
-    if (!dateInput.value) dateInput.setCustomValidity('Seleccione una fecha.');
+    dateInput.valorCustom('');
+    if (!dateInput.value) dateInput.valorCustom('Seleccione una fecha.');
     else if (dateInput.validity.rangeUnderflow)
-      dateInput.setCustomValidity('La fecha no puede ser anterior a hoy.');
+      dateInput.valorCustom('La fecha no puede ser anterior a hoy.');
   };
   const validarHora = () => {
-    timeInput.setCustomValidity('');
-    if (!timeInput.value) timeInput.setCustomValidity('Seleccione una hora.');
+    timeInput.valorCustom('');
+    if (!timeInput.value) timeInput.valorCustom('Seleccione una hora.');
     else if (timeInput.validity.rangeUnderflow || timeInput.validity.rangeOverflow)
-      timeInput.setCustomValidity('Las reservas deben ser entre 16:00 y 23:00.');
+      timeInput.valorCustom('Las reservas deben ser entre 16:00 y 23:00.');
   };
 
   dateInput.addEventListener('input', validarFecha);
